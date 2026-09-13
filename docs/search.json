@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\nJaclyn Liu\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jaclyn Liu",
+    "section": "",
+    "text": "Hi, I’m Jaclyn!\nI’m currently a Master of Data Science student at UBC, specializing in Computational Linguistics. Before MDS, I worked in the financial services industry and completed my MBA at UBC Sauder. I’m interested in the intersection of artificial intelligence, data science, and business. Through MDS, I hope to build the technical skills to complement my business background and pursue opportunities in the technology industry.\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "My first weeks in MDS at UBC.\n\n\nMy first few weeks in the Master of Data Science program have been exciting and intense. Orientation gave me a chance to meet my classmates and learn more about how the program is structured. Once classes started, I quickly realized how fast-paced the program is and how much material we cover in a short period of time.\nOne thing that surprised me was how quickly we started working with different tools and programming languages. I have already been using Python, R, Git, GitHub, the terminal, and Quarto. Some of these were unfamiliar to me at the beginning, but I am becoming more comfortable with them through practice.\nNow that I am a couple of weeks into the program, I feel much more settled. There is still a lot to learn, but I am starting to understand the workflow and feel more confident solving problems on my own. I am looking forward to seeing how much I improve over the rest of the program."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am interested in artificial intelligence, data science, finance, and technology. I am particularly interested in how AI and data can be applied to solve real-world business problems in finance.\nOutside of school, I enjoy fitness, travelling, meeting new people, and exploring the world"
+  }
+]
