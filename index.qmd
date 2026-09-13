@@ -1,0 +1,13 @@
+---
+title: "Jaclyn Liu"
+---
+
+![](images/profile.jpeg){width="250px"} 
+
+Hi, I'm Jaclyn! 
+
+I'm currently a Master of Data Science student at UBC, specializing in Computational Linguistics. Before MDS, I worked in the financial services industry and completed my MBA at UBC Sauder. I'm interested in the intersection of artificial intelligence, data science, and business. Through MDS, I hope to build the technical skills to complement my business background and pursue opportunities in the technology industry.
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
