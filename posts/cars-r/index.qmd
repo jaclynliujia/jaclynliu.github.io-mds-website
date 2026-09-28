@@ -1,0 +1,68 @@
+---
+title: "Untitled"
+format: html
+---
+
+---
+title: "Exploring Fuel Efficiency with R"
+author: "Jaclyn Liu"
+date: "2026-09-28"
+---
+
+## Introduction
+
+In this post, I use R to explore the relationship between vehicle characteristics and fuel efficiency using the `mtcars` dataset.
+
+Data: [`mtcars`](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html), included with R in the `datasets` package.
+
+The dataset contains fuel consumption and automobile design characteristics for 32 cars.
+
+## Inspect the data
+
+```{r}
+#| message: false
+#| warning: false
+
+head(mtcars)
+```
+
+The dataset includes variables such as miles per gallon (`mpg`), vehicle weight (`wt`), horsepower (`hp`), and number of cylinders (`cyl`).
+
+## Summarize fuel efficiency
+
+```{r}
+summary(mtcars$mpg)
+```
+
+The summary shows considerable variation in fuel efficiency across the 32 vehicles.
+
+## Compare fuel efficiency by cylinder count
+
+```{r}
+aggregate(mpg ~ cyl, data = mtcars, FUN = mean)
+```
+
+Cars with fewer cylinders have higher average fuel efficiency in this dataset.
+
+## Examine weight and fuel efficiency
+
+```{r}
+#| label: fig-weight-mpg
+#| fig-cap: "Relationship between vehicle weight and fuel efficiency."
+
+plot(
+  mtcars$wt,
+  mtcars$mpg,
+  xlab = "Weight (1000 lbs)",
+  ylab = "Miles per gallon",
+  main = "Vehicle Weight and Fuel Efficiency"
+)
+
+abline(lm(mpg ~ wt, data = mtcars))
+```
+
+The plot shows a negative relationship between vehicle weight and fuel efficiency. Heavier vehicles generally have lower miles per gallon.
+
+## Conclusion
+
+This analysis shows that vehicle characteristics are related to fuel efficiency. In this dataset, heavier cars and cars with more cylinders tend to have lower fuel efficiency.

@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\nJaclyn Liu\n\n\n\n\n\nNo matching items"
+    "text": "Exploring Fuel Efficiency with R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing R and Python Together\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nJaclyn Liu\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\nJaclyn Liu\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,11 +14,144 @@
     "text": "Hi, I’m Jaclyn!\nI’m currently a Master of Data Science student at UBC, specializing in Computational Linguistics. Before MDS, I worked in the financial services industry and completed my MBA at UBC Sauder. I’m interested in the intersection of artificial intelligence, data science, and business. Through MDS, I hope to build the technical skills to complement my business background and pursue opportunities in the technology industry.\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
+    "objectID": "posts/cars-r/index.html",
+    "href": "posts/cars-r/index.html",
+    "title": "Exploring Fuel Efficiency with R",
+    "section": "",
+    "text": "In this post, I use R to explore the relationship between vehicle characteristics and fuel efficiency using the mtcars dataset.\nData: mtcars, included with R in the datasets package.\nThe dataset contains fuel consumption and automobile design characteristics for 32 cars."
+  },
+  {
+    "objectID": "posts/cars-r/index.html#introduction",
+    "href": "posts/cars-r/index.html#introduction",
+    "title": "Exploring Fuel Efficiency with R",
+    "section": "",
+    "text": "In this post, I use R to explore the relationship between vehicle characteristics and fuel efficiency using the mtcars dataset.\nData: mtcars, included with R in the datasets package.\nThe dataset contains fuel consumption and automobile design characteristics for 32 cars."
+  },
+  {
+    "objectID": "posts/cars-r/index.html#inspect-the-data",
+    "href": "posts/cars-r/index.html#inspect-the-data",
+    "title": "Exploring Fuel Efficiency with R",
+    "section": "Inspect the data",
+    "text": "Inspect the data\n\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\nThe dataset includes variables such as miles per gallon (mpg), vehicle weight (wt), horsepower (hp), and number of cylinders (cyl)."
+  },
+  {
+    "objectID": "posts/cars-r/index.html#summarize-fuel-efficiency",
+    "href": "posts/cars-r/index.html#summarize-fuel-efficiency",
+    "title": "Exploring Fuel Efficiency with R",
+    "section": "Summarize fuel efficiency",
+    "text": "Summarize fuel efficiency\n\nsummary(mtcars$mpg)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  10.40   15.43   19.20   20.09   22.80   33.90 \n\n\nThe summary shows considerable variation in fuel efficiency across the 32 vehicles."
+  },
+  {
+    "objectID": "posts/cars-r/index.html#compare-fuel-efficiency-by-cylinder-count",
+    "href": "posts/cars-r/index.html#compare-fuel-efficiency-by-cylinder-count",
+    "title": "Exploring Fuel Efficiency with R",
+    "section": "Compare fuel efficiency by cylinder count",
+    "text": "Compare fuel efficiency by cylinder count\n\naggregate(mpg ~ cyl, data = mtcars, FUN = mean)\n\n  cyl      mpg\n1   4 26.66364\n2   6 19.74286\n3   8 15.10000\n\n\nCars with fewer cylinders have higher average fuel efficiency in this dataset."
+  },
+  {
+    "objectID": "posts/cars-r/index.html#examine-weight-and-fuel-efficiency",
+    "href": "posts/cars-r/index.html#examine-weight-and-fuel-efficiency",
+    "title": "Exploring Fuel Efficiency with R",
+    "section": "Examine weight and fuel efficiency",
+    "text": "Examine weight and fuel efficiency\n\nplot(\n  mtcars$wt,\n  mtcars$mpg,\n  xlab = \"Weight (1000 lbs)\",\n  ylab = \"Miles per gallon\",\n  main = \"Vehicle Weight and Fuel Efficiency\"\n)\n\nabline(lm(mpg ~ wt, data = mtcars))\n\n\n\n\n\n\n\nFigure 1: Relationship between vehicle weight and fuel efficiency.\n\n\n\n\n\nThe plot shows a negative relationship between vehicle weight and fuel efficiency. Heavier vehicles generally have lower miles per gallon."
+  },
+  {
+    "objectID": "posts/cars-r/index.html#conclusion",
+    "href": "posts/cars-r/index.html#conclusion",
+    "title": "Exploring Fuel Efficiency with R",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis analysis shows that vehicle characteristics are related to fuel efficiency. In this dataset, heavier cars and cars with more cylinders tend to have lower fuel efficiency."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
     "section": "",
     "text": "My first weeks in MDS at UBC.\n\n\nMy first few weeks in the Master of Data Science program have been exciting and intense. Orientation gave me a chance to meet my classmates and learn more about how the program is structured. Once classes started, I quickly realized how fast-paced the program is and how much material we cover in a short period of time.\nOne thing that surprised me was how quickly we started working with different tools and programming languages. I have already been using Python, R, Git, GitHub, the terminal, and Quarto. Some of these were unfamiliar to me at the beginning, but I am becoming more comfortable with them through practice.\nNow that I am a couple of weeks into the program, I feel much more settled. There is still a lot to learn, but I am starting to understand the workflow and feel more confident solving problems on my own. I am looking forward to seeing how much I improve over the rest of the program."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html",
+    "href": "posts/r-and-python/index.html",
+    "title": "Using R and Python Together",
+    "section": "",
+    "text": "This post demonstrates how R and Python can work together in one Quarto document using the reticulate package. I create an object in R, use it in Python, and then pass the Python result back to R."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#introduction",
+    "href": "posts/r-and-python/index.html#introduction",
+    "title": "Using R and Python Together",
+    "section": "",
+    "text": "This post demonstrates how R and Python can work together in one Quarto document using the reticulate package. I create an object in R, use it in Python, and then pass the Python result back to R."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#create-an-object-in-r",
+    "href": "posts/r-and-python/index.html#create-an-object-in-r",
+    "title": "Using R and Python Together",
+    "section": "Create an object in R",
+    "text": "Create an object in R\n\nlibrary(reticulate)\n\nnumbers &lt;- c(10, 20, 30, 40, 50)\nnumbers\n\n[1] 10 20 30 40 50\n\n\nThe R object numbers contains five numeric values."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#use-the-r-object-in-python",
+    "href": "posts/r-and-python/index.html#use-the-r-object-in-python",
+    "title": "Using R and Python Together",
+    "section": "Use the R object in Python",
+    "text": "Use the R object in Python\n\nnumbers_from_r = list(r.numbers)\n\npython_mean = sum(numbers_from_r) / len(numbers_from_r)\n\npython_mean\n\n30.0\n\n\nPython accesses the object created in R and calculates its mean."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#use-the-python-result-in-r",
+    "href": "posts/r-and-python/index.html#use-the-python-result-in-r",
+    "title": "Using R and Python Together",
+    "section": "Use the Python result in R",
+    "text": "Use the Python result in R\n\nmean_from_python &lt;- py$python_mean\nmean_from_python\n\n[1] 30\n\n\nThe value calculated in Python is now available in R."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#verify-the-result",
+    "href": "posts/r-and-python/index.html#verify-the-result",
+    "title": "Using R and Python Together",
+    "section": "Verify the result",
+    "text": "Verify the result\n\nmean(numbers)\n\n[1] 30\n\n\nBoth calculations produce the same mean. This demonstrates that an object can be passed from R to Python and that a result computed in Python can then be used in R within the same Quarto document."
+  },
+  {
+    "objectID": "posts/iris-python/index.html#introduction",
+    "href": "posts/iris-python/index.html#introduction",
+    "title": "Jaclyn Liu",
+    "section": "Introduction",
+    "text": "Introduction\nIn this post, I use Python to explore relationships between flower measurements in the Iris dataset.\nData: Iris dataset, accessed through scikit-learn.\nThe dataset contains measurements of sepal and petal dimensions for three iris species."
+  },
+  {
+    "objectID": "posts/iris-python/index.html#load-the-data",
+    "href": "posts/iris-python/index.html#load-the-data",
+    "title": "Jaclyn Liu",
+    "section": "Load the data",
+    "text": "Load the data\n\nfrom sklearn.datasets import load_iris\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\niris = load_iris(as_frame=True)\ndf = iris.frame\n\ndf.head()\n\n\n\n\n\n\n\n\nsepal length (cm)\nsepal width (cm)\npetal length (cm)\npetal width (cm)\ntarget\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\n0\n\n\n1\n4.9\n3.0\n1.4\n0.2\n0\n\n\n2\n4.7\n3.2\n1.3\n0.2\n0\n\n\n3\n4.6\n3.1\n1.5\n0.2\n0\n\n\n4\n5.0\n3.6\n1.4\n0.2\n0\n\n\n\n\n\n\n\nThe dataset contains four numerical flower measurements and a target variable representing species."
+  },
+  {
+    "objectID": "posts/iris-python/index.html#summarize-the-measurements",
+    "href": "posts/iris-python/index.html#summarize-the-measurements",
+    "title": "Jaclyn Liu",
+    "section": "Summarize the measurements",
+    "text": "Summarize the measurements\n\ndf.describe()\n\n\n\n\n\n\n\n\nsepal length (cm)\nsepal width (cm)\npetal length (cm)\npetal width (cm)\ntarget\n\n\n\n\ncount\n150.000000\n150.000000\n150.000000\n150.000000\n150.000000\n\n\nmean\n5.843333\n3.057333\n3.758000\n1.199333\n1.000000\n\n\nstd\n0.828066\n0.435866\n1.765298\n0.762238\n0.819232\n\n\nmin\n4.300000\n2.000000\n1.000000\n0.100000\n0.000000\n\n\n25%\n5.100000\n2.800000\n1.600000\n0.300000\n0.000000\n\n\n50%\n5.800000\n3.000000\n4.350000\n1.300000\n1.000000\n\n\n75%\n6.400000\n3.300000\n5.100000\n1.800000\n2.000000\n\n\nmax\n7.900000\n4.400000\n6.900000\n2.500000\n2.000000\n\n\n\n\n\n\n\nThe summary shows the distributions of sepal length, sepal width, petal length, and petal width."
+  },
+  {
+    "objectID": "posts/iris-python/index.html#calculate-mean-measurements-by-species",
+    "href": "posts/iris-python/index.html#calculate-mean-measurements-by-species",
+    "title": "Jaclyn Liu",
+    "section": "Calculate mean measurements by species",
+    "text": "Calculate mean measurements by species\n\ndf[\"species\"] = df[\"target\"].map(\n    dict(enumerate(iris.target_names))\n)\n\nspecies_means = df.groupby(\"species\")[\n    [\"sepal length (cm)\", \"petal length (cm)\"]\n].mean()\n\nspecies_means\n\n\n\n\n\n\n\n\nsepal length (cm)\npetal length (cm)\n\n\nspecies\n\n\n\n\n\n\nsetosa\n5.006\n1.462\n\n\nversicolor\n5.936\n4.260\n\n\nvirginica\n6.588\n5.552\n\n\n\n\n\n\n\nThe species differ substantially in their average petal lengths. Setosa has much shorter petals than versicolor and virginica."
+  },
+  {
+    "objectID": "posts/iris-python/index.html#visualize-petal-length-and-width",
+    "href": "posts/iris-python/index.html#visualize-petal-length-and-width",
+    "title": "Jaclyn Liu",
+    "section": "Visualize petal length and width",
+    "text": "Visualize petal length and width\n\nfor species in df[\"species\"].unique():\n    subset = df[df[\"species\"] == species]\n    plt.scatter(\n        subset[\"petal length (cm)\"],\n        subset[\"petal width (cm)\"],\n        label=species\n    )\n\nplt.xlabel(\"Petal length (cm)\")\nplt.ylabel(\"Petal width (cm)\")\nplt.legend()\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Petal length and petal width for the three Iris species.\n\n\n\n\n\nThe figure shows a strong positive relationship between petal length and petal width. Setosa is clearly separated from the other two species, while versicolor and virginica overlap somewhat."
+  },
+  {
+    "objectID": "posts/iris-python/index.html#conclusion",
+    "href": "posts/iris-python/index.html#conclusion",
+    "title": "Jaclyn Liu",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis analysis shows that Iris species differ noticeably in their flower measurements. Petal length and width are particularly useful for distinguishing the species."
   },
   {
     "objectID": "about.html",

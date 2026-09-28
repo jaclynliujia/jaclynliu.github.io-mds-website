@@ -1,0 +1,87 @@
+---
+Title: "Exploring the Iris Dataset with Python"
+Author: Jaclyn Liu
+Format: html
+Engine: Jupyter
+Date: "2026-09-28"
+---
+
+---
+
+---
+
+## Introduction
+
+In this post, I use Python to explore relationships between flower measurements in the Iris dataset.
+
+Data: [Iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html), accessed through scikit-learn.
+
+The dataset contains measurements of sepal and petal dimensions for three iris species.
+
+## Load the data
+
+```{python}
+#| message: false
+#| warning: false
+
+from sklearn.datasets import load_iris
+import pandas as pd
+import matplotlib.pyplot as plt
+
+iris = load_iris(as_frame=True)
+df = iris.frame
+
+df.head()
+```
+
+The dataset contains four numerical flower measurements and a target variable representing species.
+
+## Summarize the measurements
+
+```{python}
+df.describe()
+```
+
+The summary shows the distributions of sepal length, sepal width, petal length, and petal width.
+
+## Calculate mean measurements by species
+
+```{python}
+df["species"] = df["target"].map(
+    dict(enumerate(iris.target_names))
+)
+
+species_means = df.groupby("species")[
+    ["sepal length (cm)", "petal length (cm)"]
+].mean()
+
+species_means
+```
+
+The species differ substantially in their average petal lengths. Setosa has much shorter petals than versicolor and virginica.
+
+## Visualize petal length and width
+
+```{python}
+#| label: fig-iris-petals
+#| fig-cap: "Petal length and petal width for the three Iris species."
+
+for species in df["species"].unique():
+    subset = df[df["species"] == species]
+    plt.scatter(
+        subset["petal length (cm)"],
+        subset["petal width (cm)"],
+        label=species
+    )
+
+plt.xlabel("Petal length (cm)")
+plt.ylabel("Petal width (cm)")
+plt.legend()
+plt.show()
+```
+
+The figure shows a strong positive relationship between petal length and petal width. Setosa is clearly separated from the other two species, while versicolor and virginica overlap somewhat.
+
+## Conclusion
+
+This analysis shows that Iris species differ noticeably in their flower measurements. Petal length and width are particularly useful for distinguishing the species.
